@@ -1,7 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_here/ui/navigations/app_navigator.dart';
 import 'package:weather_here/ui/pages/auth.dart';
 import 'package:weather_here/ui/pages/weather.dart';
+import 'package:weather_here/const/app_routes.dart' as routes;
 
 import 'firebase_options.dart';
 
@@ -25,7 +27,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Weather(),
+      initialRoute: routes.auth,
+      navigatorKey: AppNavigator.key,
+      onGenerateRoute: (routeSettings) =>
+          AppNavigator.onGeneratedRoutes(routeSettings, context),
     );
   }
 }
