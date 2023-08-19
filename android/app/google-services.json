@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "640590578047",
+    "project_id": "weather-here-f15a1",
+    "storage_bucket": "weather-here-f15a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640590578047:android:339b7260a701ce3872da4a",
+        "android_client_info": {
+          "package_name": "com.example.weather_here"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640590578047-iastse1s3e92mqok9f0psv36mt2n0cn3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_5G1_4FQyXr2ATj4QDaS_-CAUdXjvhkI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640590578047-iastse1s3e92mqok9f0psv36mt2n0cn3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
