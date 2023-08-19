@@ -22,7 +22,7 @@ class AppNavigator {
     }
 
     if (settings.name == routes.weather) {
-      return PageRouteBuilder(pageBuilder: (_, __, ___) => Weather());
+      return PageRouteBuilder(pageBuilder: (_, __, ___) => Weather.create());
     }
   }
 }

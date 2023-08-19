@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_here/bloc/weather/weather_bloc.dart';
+import 'package:weather_here/bloc/weather/weather_event.dart';
+import 'package:weather_here/bloc/weather/weather_state.dart';
+import 'package:weather_here/data/services/weather_service.dart';
+import 'package:weather_here/domain/models/location.dart';
 
 class Weather extends StatelessWidget {
   const Weather({super.key});
@@ -25,10 +31,33 @@ class Weather extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: Image.asset("assets/icons/ellipse.png"),
-            )
+            ),
+            ElevatedButton(
+                onPressed: () =>
+                    context.read<WeatherBloc>().add(WeatherLoadEvent()),
+                child: Text("B")),
+            BlocBuilder<WeatherBloc, WeatherState>(
+              builder: ((context, state) {
+                if (state is WeatherGeoState) {
+                  return Text("GEO");
+                }
+                if (state is WeatherLoadedState) {
+                  return Text("lat=${state.loc.lat} lon=${state.loc.lon}");
+                }
+                if (state is WeatherErrorState) {
+                  return Text("error");
+                }
+                return SizedBox();
+              }),
+            ),
           ],
         ),
       ),
     );
   }
+
+  static Widget create() => BlocProvider(
+        create: (BuildContext context) => WeatherBloc(WeatherGeoState()),
+        child: Weather(),
+      );
 }
