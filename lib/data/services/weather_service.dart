@@ -14,4 +14,8 @@ class WeatherService {
   Future<WeatherModel?> getWeather(String url) async {
     return await _api.getWeather(url);
   }
+
+  Future<List<WeatherModel>?> getWeathers(String urlCast) async {
+    return await _api.getWeathers(urlCast);
+  }
 }

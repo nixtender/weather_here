@@ -12,4 +12,8 @@ class ApiDataRepository extends ApiRepository {
   @override
   Future<WeatherModel?> getWeather(String url) async =>
       await _weatherClient.getWeather(url);
+
+  @override
+  Future<List<WeatherModel>?> getWeathers(String urlCast) async =>
+      await _weatherClient.getWeathers(urlCast);
 }

@@ -4,7 +4,7 @@ class WeatherModel {
   int humidity;
   int wind;
   String description;
-  String city;
+  String? city;
 
   WeatherModel({
     required this.dt,
@@ -22,6 +22,6 @@ class WeatherModel {
         humidity: double.parse(json['main']['humidity'].toString()).toInt(),
         wind: double.parse(json['wind']['speed'].toString()).toInt(),
         description: json['weather'][0]['description'],
-        city: json['name']);
+        city: json['name'] ?? '');
   }
 }

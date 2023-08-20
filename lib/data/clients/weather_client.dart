@@ -48,4 +48,22 @@ class WeatherClient {
           msg: "Не удалось определить погоду", gravity: ToastGravity.BOTTOM);
     }
   }
+
+  Future<List<WeatherModel>?> getWeathers(String urlCast) async {
+    try {
+      final response = await http.get(Uri.parse(urlCast));
+
+      if (response.statusCode == 200) {
+        return (jsonDecode(response.body)['list'] as List<dynamic>)
+            .map((item) => WeatherModel.fromJson(item))
+            .toList();
+      } else {
+        throw Exception();
+      }
+    } catch (_) {
+      Fluttertoast.showToast(
+          msg: "Не удалось определить погоду", gravity: ToastGravity.BOTTOM);
+    }
+    return null;
+  }
 }
