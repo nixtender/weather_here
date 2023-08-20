@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ShowHidePass extends StatefulWidget {
-  const ShowHidePass({super.key});
+  TextEditingController passTec;
+
+  ShowHidePass({super.key, required this.passTec});
 
   @override
   ShowHidePassState createState() => ShowHidePassState();
@@ -13,6 +15,11 @@ class ShowHidePassState extends State<ShowHidePass> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.passTec,
+      validator: (value) {
+        if (value!.isEmpty) return "Введите пароль";
+        return null;
+      },
       decoration: InputDecoration(
           suffixIcon: IconButton(
               onPressed: () => setState(() {

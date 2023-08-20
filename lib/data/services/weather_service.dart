@@ -23,3 +23,7 @@ class WeatherService {
 class NoNetworkException implements Exception {}
 
 class NoGeolocationException implements Exception {}
+
+class UserNotFount implements Exception {}
+
+class WrongPassword implements Exception {}
