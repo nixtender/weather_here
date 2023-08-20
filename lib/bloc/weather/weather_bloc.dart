@@ -25,7 +25,9 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
                 loc: locat, weath: weath, weathList: weathList));
           }
         }
-      } catch (_) {
+      } on NoNetworkException {
+        emit(WeatherErrorState());
+      } on NoGeolocationException {
         emit(WeatherErrorState());
       }
     });

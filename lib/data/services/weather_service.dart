@@ -19,3 +19,7 @@ class WeatherService {
     return await _api.getWeathers(urlCast);
   }
 }
+
+class NoNetworkException implements Exception {}
+
+class NoGeolocationException implements Exception {}

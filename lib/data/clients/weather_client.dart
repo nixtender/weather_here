@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:weather_here/data/services/weather_service.dart';
 import 'package:weather_here/domain/models/location.dart';
 import 'package:http/http.dart' as http;
 import 'package:weather_here/domain/models/weather_model.dart';
@@ -30,6 +31,7 @@ class WeatherClient {
       Fluttertoast.showToast(
           msg: "Не удалось определить местоположение",
           gravity: ToastGravity.BOTTOM);
+      throw NoGeolocationException();
     }
     return null;
   }
@@ -46,6 +48,7 @@ class WeatherClient {
     } catch (_) {
       Fluttertoast.showToast(
           msg: "Не удалось определить погоду", gravity: ToastGravity.BOTTOM);
+      throw NoNetworkException();
     }
   }
 
@@ -63,6 +66,7 @@ class WeatherClient {
     } catch (_) {
       Fluttertoast.showToast(
           msg: "Не удалось определить погоду", gravity: ToastGravity.BOTTOM);
+      throw NoNetworkException();
     }
     return null;
   }

@@ -78,6 +78,7 @@ flutter:
     - assets/weather/thunder-big.png
     - assets/weather/mist.png
     - assets/weather/mist-big.png
+    - assets/weather/no-weather.png
 
   fonts:
     - family: Ubuntu

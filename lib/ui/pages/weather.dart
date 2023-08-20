@@ -286,7 +286,19 @@ class Weather extends StatelessWidget {
                     );
                   }
                   if (state is WeatherErrorState) {
-                    return Text("error");
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const SizedBox(
+                          height: 85,
+                        ),
+                        Container(
+                          width: double.infinity,
+                          height: 180,
+                          child: Image.asset("assets/weather/no-weather.png"),
+                        ),
+                      ],
+                    );
                   }
                   return SizedBox();
                 }),
