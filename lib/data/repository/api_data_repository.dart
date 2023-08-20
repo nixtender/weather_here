@@ -1,5 +1,6 @@
 import 'package:weather_here/data/clients/weather_client.dart';
 import 'package:weather_here/domain/models/location.dart';
+import 'package:weather_here/domain/models/weather_model.dart';
 import 'package:weather_here/domain/repository/api_repository.dart';
 
 class ApiDataRepository extends ApiRepository {
@@ -7,4 +8,8 @@ class ApiDataRepository extends ApiRepository {
 
   @override
   Future<Location?> getLocation() async => await _weatherClient.getLocation();
+
+  @override
+  Future<WeatherModel?> getWeather(String url) async =>
+      await _weatherClient.getWeather(url);
 }

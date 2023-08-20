@@ -38,11 +38,18 @@ class Weather extends StatelessWidget {
                 child: Text("B")),
             BlocBuilder<WeatherBloc, WeatherState>(
               builder: ((context, state) {
-                if (state is WeatherGeoState) {
-                  return Text("GEO");
+                if (state is WeatherGeoState || state is WeatherLoadingState) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
                 }
                 if (state is WeatherLoadedState) {
-                  return Text("lat=${state.loc.lat} lon=${state.loc.lon}");
+                  return Column(
+                    children: [
+                      Text("lat=${state.loc.lat} lon=${state.loc.lon}"),
+                      Text("city = ${state.weath.city}"),
+                    ],
+                  );
                 }
                 if (state is WeatherErrorState) {
                   return Text("error");
