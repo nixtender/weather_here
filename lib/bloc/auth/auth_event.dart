@@ -6,3 +6,5 @@ class AuthEnterEvent extends AuthEvent {
 
   AuthEnterEvent({required this.email, required this.password});
 }
+
+class AuthStartEvent extends AuthEvent {}

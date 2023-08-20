@@ -42,6 +42,7 @@ dependencies:
   fluttertoast: ^8.2.2
   http: ^0.13.5
   firebase_auth: ^4.7.3
+  shared_preferences: ^2.2.0
   
 
 dev_dependencies:
@@ -85,7 +86,16 @@ flutter:
     - family: Ubuntu
       fonts:
         - asset: assets/fonts/Ubuntu/Ubuntu.ttf
+    
+    - family: Roboto
+      fonts:
         - asset: assets/fonts/Roboto/Roboto.ttf
+
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter/Inter.ttf
+
+    
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

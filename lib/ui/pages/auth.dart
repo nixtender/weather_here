@@ -13,6 +13,7 @@ class Authentication extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //context.read<AuthBloc>().add(AuthStartEvent());
     return Scaffold(
         body: BlocProvider(
       create: (BuildContext context) => AuthBloc(AuthEmptyState()),

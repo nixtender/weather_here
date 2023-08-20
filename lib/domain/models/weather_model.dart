@@ -36,4 +36,32 @@ class WeatherModel {
         description: json['weather'][0]['description'],
         city: json['name'] ?? '');
   }
+
+  factory WeatherModel.fromJsonPref(Map<String, dynamic> json) {
+    return WeatherModel(
+        dt: DateTime.parse(json['dt'] as String),
+        temp: double.parse(json['temp'].toString()).toInt(),
+        tempMin: double.parse(json['tempMin'].toString()).toInt(),
+        tempMax: double.parse(json['tempMax'].toString()).toInt(),
+        humidity: double.parse(json['humidity'].toString()).toInt(),
+        wind: double.parse(json['wind'].toString()).toInt(),
+        windDeg: double.parse(json['windDeg'].toString()).toInt(),
+        mainWeath: json['mainWeath'],
+        description: json['description'],
+        city: json['city'] ?? "");
+  }
+
+  Map<String, dynamic> WeatherToJsonPref(WeatherModel instance) =>
+      <String, dynamic>{
+        'dt': instance.dt.toIso8601String(),
+        'temp': instance.temp,
+        'tempMin': instance.tempMin,
+        'tempMax': instance.tempMax,
+        'humidity': instance.humidity,
+        'wind': instance.wind,
+        'windDeg': instance.windDeg,
+        'mainWeath': instance.mainWeath,
+        'description': instance.description,
+        'city': instance.city,
+      };
 }

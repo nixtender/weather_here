@@ -19,8 +19,8 @@ class Weather extends StatelessWidget {
     context.read<WeatherBloc>().add(WeatherLoadEvent());
     return WillPopScope(
       onWillPop: () async {
-        await FirebaseAuth.instance.signOut();
-        Navigator.of(context).pop();
+        //await FirebaseAuth.instance.signOut();
+        //Navigator.of(context).pop();
         return true;
       },
       child: Scaffold(
