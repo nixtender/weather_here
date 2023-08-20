@@ -16,11 +16,13 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
           var url =
               'https://api.openweathermap.org/data/2.5/weather?lat=${locat.lat}&lon=${locat.lon}&appid=${locat.apiKey}&lang=ru&units=metric';
           var urlCast =
-              'https://api.openweathermap.org/data/2.5/forecast/?lat=${locat.lat}&lon=${locat.lon}&appid=${locat.apiKey}&lang=ru&units=metric&cnt=10';
+              'https://api.openweathermap.org/data/2.5/forecast/?lat=${locat.lat}&lon=${locat.lon}&appid=${locat.apiKey}&lang=ru&units=metric&cnt=5';
           var weath = await _weatherService.getWeather(url);
           var weathList = await _weatherService.getWeathers(urlCast);
           if (weath != null && weathList != null) {
-            emit(WeatherLoadedState(loc: locat, weath: weath));
+            weathList.removeAt(0);
+            emit(WeatherLoadedState(
+                loc: locat, weath: weath, weathList: weathList));
           }
         }
       } catch (_) {

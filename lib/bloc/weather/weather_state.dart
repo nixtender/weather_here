@@ -6,8 +6,10 @@ abstract class WeatherState {}
 class WeatherLoadedState extends WeatherState {
   Location loc;
   WeatherModel weath;
-  WeatherLoadedState({required this.loc, required this.weath})
-      : assert(loc != null && weath != null);
+  List<WeatherModel> weathList;
+  WeatherLoadedState(
+      {required this.loc, required this.weath, required this.weathList})
+      : assert(loc != null && weath != null && weathList != null);
 }
 
 class WeatherGeoState extends WeatherState {}

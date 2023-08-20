@@ -64,6 +64,20 @@ flutter:
     - assets/icons/eye.png
     - assets/icons/eye-off.png
     - assets/icons/ellipse.png
+    - assets/icons/drop.png
+    - assets/icons/wind.png
+    - assets/weather/cloud.png
+    - assets/weather/cloud-big.png
+    - assets/weather/drizzle.png
+    - assets/weather/drizzle-big.png
+    - assets/weather/snow.png
+    - assets/weather/snow-big.png
+    - assets/weather/sun.png
+    - assets/weather/sun-big.png
+    - assets/weather/thunder.png
+    - assets/weather/thunder-big.png
+    - assets/weather/mist.png
+    - assets/weather/mist-big.png
 
   fonts:
     - family: Ubuntu
