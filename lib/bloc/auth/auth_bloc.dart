@@ -47,38 +47,3 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
   }
 }
-
-
-      // emit(AuthCheckingState());
-      // try {
-      //   await FirebaseAuth.instance
-      //       .signInWithEmailAndPassword(
-      //           email: event.email, password: event.password)
-      //       .then((value) {
-      //     emit(AuthCheckedState());
-      //     AppNavigator.toWeather();
-      //   }).catchError((error, stackTrace) {
-      //     Fluttertoast.showToast(
-      //         msg: "Пользователь с таким Email не найден",
-      //         gravity: ToastGravity.BOTTOM);
-      //     emit(AuthEmptyState());
-      //   });
-      // } on FirebaseAuthException catch (e) {
-      //   if (e.code == 'user-not-found') {
-      //     emit(AuthErrorState());
-      //     Fluttertoast.showToast(
-      //         msg: "Пользователь с таким Email не найден",
-      //         gravity: ToastGravity.BOTTOM);
-      //     emit(AuthEmptyState());
-      //   } else if (e.code == 'wrong-password') {
-      //     Fluttertoast.showToast(
-      //         msg: "Неверный пароль", gravity: ToastGravity.BOTTOM);
-      //     emit(AuthEmptyState());
-      //   } else {
-      //     Fluttertoast.showToast(
-      //         msg: "Пользователь с таким Email не найден",
-      //         gravity: ToastGravity.BOTTOM);
-      //     emit(AuthEmptyState());
-      //   }
-      // }
-    

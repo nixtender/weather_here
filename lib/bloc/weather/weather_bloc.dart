@@ -33,15 +33,17 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
         List<WeatherModel>? listW = await SyncService().getListPref();
         if (model != null && listW != null) {
           emit(WeatherLoadedState(weath: model, weathList: listW));
-        } else
+        } else {
           emit(WeatherErrorState());
+        }
       } on NoGeolocationException {
         WeatherModel? model = await SyncService().getWeatherPref();
         List<WeatherModel>? listW = await SyncService().getListPref();
         if (model != null && listW != null) {
           emit(WeatherLoadedState(weath: model, weathList: listW));
-        } else
+        } else {
           emit(WeatherErrorState());
+        }
       }
     });
   }
